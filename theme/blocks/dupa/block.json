@@ -1,0 +1,57 @@
+{
+  "name": "dupa",
+  "title": "Dupa",
+  "description": "All fields test block",
+  "style": "file:./dupa.css",
+  "category": "custom",
+  "icon": "admin-comments",
+  "apiVersion": 2,
+  "keywords": [
+    "test",
+    "quote"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "dupa.php",
+    "postTypes": [ "post", "page" ]
+  },
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "red", "label": "Red" },
+    { "name": "green", "label": "Green" },
+    { "name": "blue", "label": "Blue" }
+  ],
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "alignText": true,
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true
+    },
+    "fullHeight": true
+  },
+  "attributes": {
+    "backgroundColor": {
+      "type": "string",
+      "default": "purple"
+    }
+  },
+  "example": {
+    "attributes": {
+      "data": {
+        "text": "This is an example text field",
+        "text_area": "This is an example text area field"
+      }
+    }
+  }
+}

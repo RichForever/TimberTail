@@ -29,8 +29,7 @@ class Timberland extends Site
         add_action('init', [$this, 'register_custom_post_types']);
         add_action('init', [$this, 'register_taxonomies']);
         add_action('block_categories_all', [$this, 'block_categories_all']);
-//        add_action('acf/init', [$this, 'acf_register_blocks']);
-        //add_filter('allowed_block_types', [$this, 'allowed_block_types']);
+        add_action('acf/init', [$this, 'acf_register_blocks']);
         add_action('enqueue_block_editor_assets', [$this, 'enqueue_block_editor_assets']);
 
         parent::__construct();
@@ -154,28 +153,12 @@ class Timberland extends Site
         return array_merge([['slug' => 'custom', 'title' => __('Custom')]], $categories);
     }
 
-//    public function acf_register_blocks() {
-//        foreach (new DirectoryIterator(dirname(__FILE__) . '/blocks') as $dir) {
-//            if ($dir->isDot()) continue;
-//
-//            $settings = [
-//                'name' => $dir->getFilename(),
-//                'title' => __(ucwords(str_replace('-', ' ', $dir->getFilename()))),
-//                'description' => __(''),
-//                'render_callback' => [$this, 'acf_block_render_callback'],
-//                'category' => 'custom',
-//                'align' => false,
-//                'example'  => array(
-//                    'attributes' => array(
-//                        'mode' => 'preview',
-//                        'data' => array()
-//                    )
-//                )
-//            ];
-//
-//            acf_register_block_type($settings);
-//        }
-//    }
+    public function acf_register_blocks() {
+        foreach (new DirectoryIterator(dirname(__FILE__) . '/blocks') as $dir) {
+            if ($dir->isDot()) continue;
+            register_block_type( dirname(__FILE__) . '/blocks/' . $dir->getFilename() . '/block.json' );
+        }
+    }
 
     public function acf_block_render_callback( $block, $content = '', $is_preview = false ) {
         $context = Timber::context();
@@ -187,25 +170,12 @@ class Timberland extends Site
         Timber::render('blocks/'. $dirName . '/index.twig', $context);
     }
 
-    public function allowed_block_types() {
-        $allowed_blocks = [
-            'core/columns'
-        ];
-
-        foreach (new DirectoryIterator(dirname(__FILE__) . '/blocks') as $dir) {
-            $allowed_blocks[] = 'acf/' . $dir;
-        }
-
-        return $allowed_blocks;
-    }
-
     public function enqueue_block_editor_assets() {
         //wp_enqueue_style('prefix-editor-font', '//fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
         wp_enqueue_script('app', get_template_directory_uri() . '/assets/build/app.js');
     }
 
-    public function mix($path, $manifestDirectory)
-    {
+    public function mix($path, $manifestDirectory) {
         static $manifest;
 
         if (! $manifest) {
@@ -225,7 +195,7 @@ class Timberland extends Site
                 "Unable to locate Mix file: {$path}. Please check your webpack.mix.js output paths and try again."
             );
         }
-//
+
         return $manifest[$path];
     }
 }
