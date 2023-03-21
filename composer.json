@@ -1,0 +1,29 @@
+{
+  "name": "mm/starter",
+  "type": "wordpress-theme",
+  "description": "A modern Wordpress theme using Timber, ACF, Tailwind CSS and Alpine JS",
+  "license": "MIT",
+  "require": {
+    "timber/timber": "^1.20.0",
+    "wpengine/advanced-custom-fields-pro": "^6.0"
+  },
+  "repositories": [
+    {
+      "type":"composer",
+      "url":"https://connect.advancedcustomfields.com"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": ["type:wordpress-plugin"]
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "minimum-stability": "stable"
+}
