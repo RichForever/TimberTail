@@ -69,7 +69,10 @@ class Timberland extends Site
         add_theme_support('post-thumbnails');
         add_theme_support('title-tag');
         add_theme_support('editor-styles');
-        add_editor_style('public/editor-style.css');
+
+		// register editor styles
+	    $mixPublicPath = get_template_directory() . '/public';
+	    add_editor_style(get_template_directory_uri() . '/public/' . $this->mix("editor.css", $mixPublicPath));
     }
 
     public function enqueue_scripts()
