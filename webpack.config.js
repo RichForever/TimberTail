@@ -12,7 +12,7 @@ module.exports = {
   entry: {
     "scripts": "./theme/src/scripts/app.js",
     "styles": "./theme/src/styles/app.scss",
-    "editor-styles": "./theme/src/styles/editor-styles.scss",
+    "editor": "./theme/src/styles/editor-styles.scss"
   },
   // entry: "./theme/src/scripts/app.js",
   output: {
