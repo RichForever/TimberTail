@@ -1,1 +1,0 @@
-{"version":3,"file":"scripts.8e084066.js","mappings":"AAIAA,MAAM","sources":["webpack://my-webpack-project/./theme/src/scripts/app.js"],"sourcesContent":["function importAll(r) {\n  r.keys().forEach(r)\n}\n\nalert('tet')\n\n// importAll(require.context(\"../../blocks/\", true, /\\/script\\.js$/))\n"],"names":["alert"],"sourceRoot":""}

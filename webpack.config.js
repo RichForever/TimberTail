@@ -2,6 +2,7 @@
 
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 
@@ -11,14 +12,14 @@ module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
     "scripts": "./theme/src/scripts/app.js",
-    "styles": "./theme/src/styles/app.scss",
-    "editor": "./theme/src/styles/editor-styles.scss"
+    "styles": ["./theme/src/styles/app.scss"],
+    "editor": ["./theme/src/styles/editor-styles.scss"],
   },
   // entry: "./theme/src/scripts/app.js",
   output: {
     path: path.resolve(__dirname, "theme/public"),
-    filename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
-    chunkFilename: isProduction ? "[id].[contenthash:8].js" : "[id].js",
+    filename: isProduction ? "[name].[chunkhash:8].js" : "[name].js",
+    chunkFilename: isProduction ? "[name].[chunkhash:8].js" : "[id].js",
     clean: true,
   },
   plugins: [
@@ -31,9 +32,10 @@ module.exports = {
         }
       },
     }),
+    new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: isProduction ? "[name].[contenthash:8].css" : "[name].css",
-      chunkFilename: isProduction ? "[id].[contenthash:8].css" : "[id].css",
+      filename: isProduction ? "[name].[chunkhash:8].css" : "[name].css",
+      chunkFilename: isProduction ? "[name].[chunkhash:8].css" : "[id].css",
     }),
 
     // Add your plugins here

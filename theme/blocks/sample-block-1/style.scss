@@ -1,0 +1,13 @@
+$bg: darken(yellow,40);
+
+[data-block="sample-block-1"] {
+  background: url("~images/trophy.png");
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+  p {
+    font-weight: 700;
+    color: blue;
+  }
+}
