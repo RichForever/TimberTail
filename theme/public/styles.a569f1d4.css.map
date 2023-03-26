@@ -1,1 +1,0 @@
-{"version":3,"file":"styles.a569f1d4.css","mappings":"AAAA,KACE,e","sources":["webpack://my-webpack-project/./theme/src/styles/app.scss"],"sourcesContent":["body {\r\n  background: red;\r\n}"],"names":[],"sourceRoot":""}

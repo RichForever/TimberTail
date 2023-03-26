@@ -1,1 +1,0 @@
-{"version":3,"file":"sample-block-1-script-js.93fdb3f0.js","mappings":"0GAAAA,QAAQC,IAAI,4B","sources":["webpack://my-webpack-project/./theme/blocks/sample-block-1/script.js"],"sourcesContent":["console.log('Hello from Sample Block 1')"],"names":["console","log"],"sourceRoot":""}

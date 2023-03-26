@@ -1,21 +1,24 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
+const glob = require("glob-all");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
+const TerserPlugin = require('terser-webpack-plugin');
+const ProgressPlugin = require('progress-webpack-plugin');
+
 
 const isProduction = process.env.NODE_ENV == "production";
 
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
-    "scripts": "./theme/src/scripts/app.js",
+    "scripts": ["./theme/src/scripts/app.js"],
     "styles": ["./theme/src/styles/app.scss"],
     "editor": ["./theme/src/styles/editor-styles.scss"],
   },
-  // entry: "./theme/src/scripts/app.js",
   output: {
     path: path.resolve(__dirname, "theme/public"),
     filename: isProduction ? "[name].[chunkhash:8].js" : "[name].js",
@@ -23,6 +26,7 @@ module.exports = {
     clean: true,
   },
   plugins: [
+    new ProgressPlugin(),
     new WebpackAssetsManifest({
       output: path.resolve(__dirname, "theme/public/manifest.json"),
       customize(entry, original, manifest, asset) {
@@ -37,7 +41,6 @@ module.exports = {
       filename: isProduction ? "[name].[chunkhash:8].css" : "[name].css",
       chunkFilename: isProduction ? "[name].[chunkhash:8].css" : "[id].css",
     }),
-
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
@@ -108,6 +111,14 @@ module.exports = {
               "imagemin-pngquant",
               "imagemin-svgo",
             ],
+          },
+        },
+      }),
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          output: {
+            comments: false,
           },
         },
       }),
