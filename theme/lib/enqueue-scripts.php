@@ -30,5 +30,5 @@ wp_dequeue_script('jquery');
 
 $mixPublicPath = get_template_directory() . '/public';
 
-wp_enqueue_style('style', get_template_directory_uri() . '/public/' . mix("styles.css", $mixPublicPath));
-wp_enqueue_script('app', get_template_directory_uri() . '/public/' . mix("scripts.js", $mixPublicPath), array(), '', true);
+wp_enqueue_style('style', get_template_directory_uri() . '/dist/' . mix("styles.css", $mixPublicPath));
+wp_enqueue_script('app', get_template_directory_uri() . '/dist/' . mix("scripts.js", $mixPublicPath), array(), '', true);
