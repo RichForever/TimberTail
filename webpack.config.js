@@ -33,7 +33,6 @@ module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
     "scripts": config.src.scripts + "app.js",
-    "twig": config.src.scripts + "twig.js",
     "blocks": config.src.scripts + "blocks.js",
     "styles": config.src.styles + "app.scss",
     "editor": config.src.styles + "editor-styles.scss",

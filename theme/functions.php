@@ -17,6 +17,7 @@ use Timber\PostQuery;
 $timber = new Timber();
 
 Timber::$dirname = array('views', 'blocks');
+
 class Timberland extends Site {
     public function __construct() {
 	    add_filter('timber/context', [$this, 'add_to_context']);
