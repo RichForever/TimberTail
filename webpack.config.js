@@ -3,13 +3,11 @@
 const path = require("path");
 const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const TerserPlugin = require('terser-webpack-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
-const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
-const PurgeCSSWordpress = require('purgecss-with-wordpress');
 
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -47,6 +45,7 @@ module.exports = {
   devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
   plugins: [
     new ProgressPlugin(),
+    new RemoveEmptyScriptsPlugin(),
     new WebpackAssetsManifest({
       output: path.resolve(__dirname, config.dist.main + "manifest.json"),
       customize(entry, original, manifest, asset) {
@@ -56,26 +55,11 @@ module.exports = {
         }
       },
     }),
-    new FixStyleOnlyEntriesPlugin(),
+
     new MiniCssExtractPlugin({
       filename: isProduction ? "[name].[chunkhash:8].css" : "[name].css",
       chunkFilename: isProduction ? "[name].[chunkhash:8].css" : "[name].css",
     }),
-    // new PurgeCSSPlugin({
-    //   paths: () => [
-    //       ...glob.sync('./theme/**/*.twig', { nodir: true }),
-    //       ...glob.sync('./theme/views/**/*.twig', { nodir: true }),
-    //       ...glob.sync('./theme/**/*.php', { nodir: true }),
-    //       ...glob.sync('./theme/**/*.js', { nodir: true }),
-    //   ],
-    //   safelist: {
-    //     standard: [
-    //         ...PurgeCSSWordpress.safelist,
-    //     ]
-    //   }
-    // })
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [

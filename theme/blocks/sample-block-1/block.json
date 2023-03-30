@@ -6,13 +6,10 @@
   "category": "custom",
   "icon": "admin-comments",
   "apiVersion": 2,
-  "keywords": [
-    "test",
-    "quote"
-  ],
+  "keywords": [],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "template.php",
+    "renderTemplate": "render.php",
     "postTypes": [ "post", "page" ]
   },
   "styles": [

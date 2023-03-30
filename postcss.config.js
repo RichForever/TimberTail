@@ -1,8 +1,13 @@
+const purgecss = require('@fullhuman/postcss-purgecss')
+const purgecssWordpress = require('purgecss-with-wordpress')
+
 module.exports = {
-  // Add you postcss configuration here
-  // Learn more about it at https://github.com/webpack-contrib/postcss-loader#config-files
   plugins: [
     "autoprefixer",
-    "postcss-pxtorem"
+    "postcss-pxtorem",
+      purgecss({
+        content: ['./theme/**/*.twig'],
+        safelist: purgecssWordpress.safelist
+      })
   ]
 };

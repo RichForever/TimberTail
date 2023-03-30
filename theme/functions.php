@@ -40,11 +40,6 @@ class Timberland extends Site {
         $context['site'] = $this;
         $context['menu'] = new Menu();
 	    $context['options'] = get_fields('option');
-        
-        // Require block functions files
-        foreach (glob(dirname(__FILE__) . "/blocks/*/functions.php") as $file) {
-            require_once $file;
-        }
 
         return $context;
     }
