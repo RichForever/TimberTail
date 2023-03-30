@@ -1,9 +1,0 @@
-@use "../../src/scss/utils";
-
-.sample-block-1 {
-  background: utils.$red;
-  p {
-    color: utils.$white;
-    font-size: 24px;
-  }
-}
