@@ -8,6 +8,7 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const TerserPlugin = require('terser-webpack-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -55,11 +56,22 @@ module.exports = {
         }
       },
     }),
-
     new MiniCssExtractPlugin({
       filename: isProduction ? "[name].[chunkhash:8].css" : "[name].css",
       chunkFilename: isProduction ? "[name].[chunkhash:8].css" : "[name].css",
     }),
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://dev.site',
+      files: [
+          "./theme/**/*.twig",
+          "./theme/**/*.php",
+          "./theme/**/*.scss",
+          "./theme/**/*.css",
+          "./theme/**/*.js"
+      ]
+    })
   ],
   module: {
     rules: [
@@ -71,9 +83,14 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          { loader: "css-loader" },
+          { loader: "postcss-loader" },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
         ],
       },
       {

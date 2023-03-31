@@ -1,0 +1,9 @@
+@use "../../src/scss/utils";
+
+.sample-block-1 {
+  background: red;
+  @include utils.mq('lg') {
+    background: purple;
+    color: white;
+  }
+}

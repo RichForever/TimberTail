@@ -1,11 +1,9 @@
+@use "~bootstrap/scss/bootstrap";
+
 @use "../../src/scss/base";
+@use "../../src/scss/utils";
 
 body {
-  background: red;
-  background: url("~images/trophy.png");
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-.test {
-  color: red;
+  background: black;
 }
