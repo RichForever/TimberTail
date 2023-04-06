@@ -1,4 +1,4 @@
-import myTheme from './theme'
+import myTheme from './tailwind.theme.config'
 
 module.exports = {
     content: [
