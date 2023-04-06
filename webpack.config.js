@@ -33,7 +33,7 @@ module.exports = {
   entry: {
     "scripts": config.src.scripts + "app.js",
     "blocks": config.src.scripts + "blocks.js",
-    "twig":config.src.scripts + "twig.js",
+    "twig": config.src.scripts + "twig.js",
     "styles": config.src.styles + "app.scss",
     "editor": config.src.styles + "editor-styles.scss",
   },

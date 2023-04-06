@@ -3,11 +3,15 @@ const purgecssWordpress = require('purgecss-with-wordpress')
 
 module.exports = {
   plugins: [
-    "autoprefixer",
-    "postcss-pxtorem",
-      purgecss({
-        content: ['./theme/**/*.twig'],
-        safelist: purgecssWordpress.safelist
-      })
+    require('tailwindcss'),
+    require('autoprefixer'),
+    require('postcss-pxtorem'),
+    // purgecss({
+    //   content: [
+    //       './theme/**/*.twig',
+    //       './theme/views/**/*.twig'
+    //   ],
+    //   safelist: purgecssWordpress.safelist,
+    // })
   ]
-};
+}

@@ -1,9 +1,3 @@
-@use "~bootstrap/scss/bootstrap";
-
-@use "../../src/scss/base";
-@use "../../src/scss/utils";
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background: black;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
