@@ -9,6 +9,7 @@ const WebpackAssetsManifest = require("webpack-assets-manifest");
 const TerserPlugin = require('terser-webpack-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -134,6 +135,7 @@ module.exports = {
     },
     minimizer: [
       "...",
+      new CssMinimizerPlugin(),
       new ImageMinimizerPlugin({
         severityError: "warning",
         minimizer: {

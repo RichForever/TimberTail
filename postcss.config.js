@@ -6,9 +6,6 @@ module.exports = {
     require('tailwindcss'),
     require('autoprefixer'),
     require('postcss-pxtorem'),
-    require('cssnano')({
-      preset: 'default',
-    }),
     // purgecss({
     //   content: [
     //       './theme/**/*.twig',
