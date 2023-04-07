@@ -25,6 +25,7 @@ class Timberland extends Site {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
 	    add_action('after_setup_theme', [$this, 'theme_supports']);
 	    add_action('after_setup_theme', [$this, 'remove_header_actions']);
+	    add_action('after_setup_theme', [$this, 'vendor_settings']);
 	    add_action('acf/init', [$this, 'register_blocks']);
 	    add_action('block_categories_all', [$this, 'register_blocks_category']);
 	    add_action('init', [$this, 'register_images']);
@@ -86,6 +87,10 @@ class Timberland extends Site {
     public function register_blocks() {
 	    require_once "lib/blocks-register.php";
     }
+
+	public function vendor_settings() {
+		require_once "lib/vendor-settings.php";
+	}
 
 }
 

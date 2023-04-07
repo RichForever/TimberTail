@@ -1,0 +1,75 @@
+{
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "color": [],
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": "0.625rem"
+        },
+        {
+          "name": "sm",
+          "slug": "sm",
+          "size": "0.8125rem"
+        },
+        {
+          "name": "base",
+          "slug": "base",
+          "size": "1rem"
+        },
+        {
+          "name": "lg",
+          "slug": "lg",
+          "size": "1.25rem"
+        },
+        {
+          "name": "xl",
+          "slug": "xl",
+          "size": "1.5rem"
+        },
+        {
+          "name": "2xl",
+          "slug": "2xl",
+          "size": "1.5625rem"
+        },
+        {
+          "name": "3xl",
+          "slug": "3xl",
+          "size": "1.9375rem"
+        },
+        {
+          "name": "4xl",
+          "slug": "4xl",
+          "size": "2.4375rem"
+        },
+        {
+          "name": "5xl",
+          "slug": "5xl",
+          "size": "2.625rem"
+        },
+        {
+          "name": "6xl",
+          "slug": "6xl",
+          "size": "3.0625rem"
+        },
+        {
+          "name": "7xl",
+          "slug": "7xl",
+          "size": "3.8125rem"
+        },
+        {
+          "name": "8xl",
+          "slug": "8xl",
+          "size": "4rem"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "1100px"
+    }
+  }
+}

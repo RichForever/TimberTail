@@ -35,6 +35,7 @@ module.exports = {
     "blocks": config.src.scripts + "blocks.js",
     "twig": config.src.scripts + "twig.js",
     "styles": config.src.styles + "app.scss",
+    "theme": config.src.styles + "theme.scss",
     "editor": config.src.styles + "editor-styles.scss",
   },
   output: {
