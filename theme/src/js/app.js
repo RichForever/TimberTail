@@ -3,6 +3,7 @@
 // }
 //
 // importAll(require.context("../../blocks/", true, /\/script\.js$/))
+import hamburger from './components/hamburger';
 import { initBlock } from './blocks';
 
 const blockNames = [
@@ -12,3 +13,7 @@ const blockNames = [
 for (const item of blockNames) {
   initBlock(item).then((blocks) => {});
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  hamburger()
+})

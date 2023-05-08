@@ -29,10 +29,16 @@ class Timberland extends Site {
 	    add_action('acf/init', [$this, 'register_blocks']);
 	    add_action('block_categories_all', [$this, 'register_blocks_category']);
 	    add_action('init', [$this, 'register_images']);
+	    add_action('init', [ $this, 'register_menus' ]);
 	    add_action('init', [$this, 'register_widgets']);
         add_action('init', [$this, 'register_custom_post_types']);
         add_action('init', [$this, 'register_taxonomies']);
 	    add_action('login_errors', [$this, 'custom_login_error_message']);
+
+	    // load only on local
+	    if( 'local' === wp_get_environment_type() ) {
+		    add_action( 'phpmailer_init', [ $this, 'register_mailer' ] );
+	    }
 
         parent::__construct();
     }
@@ -69,6 +75,10 @@ class Timberland extends Site {
 		require_once "lib/images.php";
 	}
 
+	public function register_menus() {
+		require_once "lib/menus-register.php";
+	}
+
 	public function register_widgets() {
 		require_once "lib/widgets.php";
 	}
@@ -80,6 +90,13 @@ class Timberland extends Site {
     public function register_taxonomies() {
 	    require_once "lib/custom-post-types.php";
     }
+
+	public function register_mailer($phpmailer) {
+		$phpmailer->Host = 'mailhog';
+		$phpmailer->Port = 1025;
+		$phpmailer->IsSMTP();
+	}
+
     public function register_blocks_category($categories) {
         return array_merge([['slug' => 'custom', 'title' => __('Custom')]], $categories);
     }
