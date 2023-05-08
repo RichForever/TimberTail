@@ -18,7 +18,7 @@ $timber = new Timber();
 
 Timber::$dirname = array('views', 'blocks');
 
-class Timberland extends Site {
+class wpstarter extends Site {
     public function __construct() {
 	    add_filter('timber/context', [$this, 'add_to_context']);
 	    add_filter('timber/twig', [$this, 'add_to_twig']);
@@ -26,13 +26,15 @@ class Timberland extends Site {
 	    add_action('after_setup_theme', [$this, 'theme_supports']);
 	    add_action('after_setup_theme', [$this, 'remove_header_actions']);
 	    add_action('after_setup_theme', [$this, 'vendor_settings']);
+	    add_action('acf/init', [$this, 'acf_register_options']);
 	    add_action('acf/init', [$this, 'register_blocks']);
 	    add_action('block_categories_all', [$this, 'register_blocks_category']);
 	    add_action('init', [$this, 'register_images']);
-	    add_action('init', [ $this, 'register_menus' ]);
+	    add_action('init', [ $this, 'register_menus']);
 	    add_action('init', [$this, 'register_widgets']);
         add_action('init', [$this, 'register_custom_post_types']);
         add_action('init', [$this, 'register_taxonomies']);
+	    add_action('init', [$this, 'register_custom_theme_options'] );
 	    add_action('login_errors', [$this, 'custom_login_error_message']);
 
 	    // load only on local
@@ -97,6 +99,21 @@ class Timberland extends Site {
 		$phpmailer->IsSMTP();
 	}
 
+	public function acf_register_options() {
+		if( function_exists('acf_add_options_sub_page') ) {
+			$child = acf_add_options_sub_page(array(
+				'page_title'  => __('Theme settings'),
+				'menu_title'  => __('Theme settings'),
+				'parent_slug' => 'options-general.php',
+				'menu_slug' => 'theme-settings'
+			));
+		}
+	}
+
+	public function register_custom_theme_options() {
+		require('lib/custom-theme-options.php');
+	}
+
     public function register_blocks_category($categories) {
         return array_merge([['slug' => 'custom', 'title' => __('Custom')]], $categories);
     }
@@ -111,4 +128,4 @@ class Timberland extends Site {
 
 }
 
-new Timberland();
+new wpstarter();
