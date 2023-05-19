@@ -1,1 +1,16 @@
 @use "../../blocks/sample-block-1/editor";
+
+@use "base" as base;
+@use "components" as components;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html :where(.wp-block) {
+  max-width: 1200px;
+}
+
+h1.wp-block-post-title {
+  @apply text-4xl font-bold;
+}

@@ -1,0 +1,19 @@
+.navbar.active .navbar__hamburger .span__item {
+  @apply translate-x-10
+}
+
+.navbar.active .navbar__close {
+  @apply translate-x-0 w-12
+}
+
+.navbar.active .navbar__close > span:first-of-type {
+  @apply rotate-45
+}
+
+.navbar.active .navbar__close > span:last-of-type {
+  @apply -rotate-45
+}
+
+.navbar.active .navbar__menu {
+  @apply block
+}

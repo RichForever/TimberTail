@@ -1,0 +1,24 @@
+.btn:not(.wp-block-button),
+.btn > .wp-block-button__link {
+  @apply text-white-500 inline-flex items-center focus:ring-4 focus:ring-black-300 font-semibold rounded-lg text-sm xl:text-base px-8 py-3 text-center;
+}
+
+.btn--primary:not(.wp-block-button),
+.btn--primary > .wp-block-button__link {
+  @apply bg-purple-500 hover:bg-purple-600 focus:ring-4 focus:ring-purple-300;
+}
+
+.btn--primary-outline:not(.wp-block-button),
+.btn--primary-outline > .wp-block-button__link {
+  @apply bg-transparent text-purple-500 border-2 border-purple-500 hover:border-purple-600 hover:bg-purple-600 hover:text-white-500 focus:ring-4 focus:ring-purple-300;
+}
+
+.btn--secondary:not(.wp-block-button),
+.btn--secondary > .wp-block-button__link {
+  @apply bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-300;
+}
+
+.btn--secondary-outline:not(.wp-block-button),
+.btn--secondary-outline > .wp-block-button__link {
+  @apply bg-transparent text-orange-500 border-2 border-orange-500 hover:border-orange-600 hover:bg-orange-600 hover:text-white-500 focus:ring-4 focus:ring-orange-300;
+}

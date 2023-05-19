@@ -121,6 +121,7 @@ module.exports = {
     alias: {
       images: path.join(__dirname, config.src.images),
       fonts: path.join(__dirname, config.src.fonts),
+      blocks: path.join(__dirname, 'theme/blocks')
     },
   },
   optimization: {

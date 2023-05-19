@@ -5,6 +5,7 @@
 // importAll(require.context("../../blocks/", true, /\/script\.js$/))
 import hamburger from './components/hamburger';
 import anchorScroll from './components/anchorScroll';
+import scrollToUp from './components/scrollToUp';
 import { initBlock } from './blocks';
 
 const blockNames = [
@@ -18,4 +19,5 @@ for (const item of blockNames) {
 window.addEventListener('DOMContentLoaded', () => {
   hamburger()
   anchorScroll()
+  scrollToUp()
 })

@@ -30,6 +30,7 @@ class wpstarter extends Site {
 	    add_action('acf/init', [$this, 'register_blocks']);
 	    add_action('block_categories_all', [$this, 'register_blocks_category']);
 	    add_action('init', [$this, 'register_images']);
+        add_action('after_setup_theme', [ $this, 'register_icons']);
 	    add_action('init', [ $this, 'register_menus']);
 	    add_action('init', [$this, 'register_widgets']);
         add_action('init', [$this, 'register_custom_post_types']);
@@ -47,7 +48,8 @@ class wpstarter extends Site {
 
     public function add_to_context($context) {
         $context['site'] = $this;
-        $context['menu'] = new Menu();
+        $context['main_menu']  = new Menu( 'main_menu' );
+        $context['footer_menu']  = new Menu('footer_menu');
 	    $context['options'] = get_fields('option');
 
         return $context;
@@ -76,6 +78,10 @@ class wpstarter extends Site {
 	public function register_images() {
 		require_once "lib/images.php";
 	}
+
+    public function register_icons() {
+        require_once "lib/icons.php";
+    }
 
 	public function register_menus() {
 		require_once "lib/menus-register.php";
