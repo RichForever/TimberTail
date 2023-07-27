@@ -8,8 +8,8 @@
  * WooCommerce) you can delete this file and header.php
  *
  * @package WordPress
- * @subpackage Timberland
- * @since Timberland 1.1.0
+ * @subpackage wpstarter
+ * @since wpstarter 1.0
  */
 
 use Timber\Timber;
