@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
-const TerserPlugin = require('terser-webpack-plugin');
+const { EsbuildPlugin } = require('esbuild-loader')
 const ProgressPlugin = require('progress-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -79,7 +79,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/i,
-        loader: "babel-loader",
+        loader: 'esbuild-loader',
       },
       {
         test: /\.s[ac]ss$/i,
@@ -151,14 +151,7 @@ module.exports = {
           },
         },
       }),
-      new TerserPlugin({
-        extractComments: false,
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-        },
-      }),
+      new EsbuildPlugin(),
     ],
   },
 };

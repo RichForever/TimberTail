@@ -1,4 +1,4 @@
-<nav class="bg-white-500 mt-6 mb-16 md:mb-20 xl:mb-24 2xl:mb-20 px-6 lg:px-0 navbar {{ page == '404' ? 'hidden' : 'block' }}">
+<nav class="bg-white-500 mt-6 mb-16 md:mb-20 xl:mb-24 2xl:mb-20 px-6 lg:px-0 navbar {{ page == '404' ? 'hidden' : 'block' }}" x-data="{ open: false }" :class="open && 'active'">
     <div class="flex flex-wrap items-center justify-between mx-auto lg:container">
         {% include 'partial/brand.twig' %}
         {% include 'partial/hamburger.twig' %}
