@@ -2,7 +2,7 @@
 {#    footer content here#}
 {#</footer>#}
 
-<button id="scrollUp" class="fixed right-6 bottom-6" style="display: none;">
+<button id="scrollUp" class="fixed right-6 bottom-6" style="display: none;" x-data @click.window="window.scrollTo({top: 0, behavior: 'smooth'})">
     <span class="sr-only">Kliknij i przewiń stronę na górę</span>
     <div class="scrollUp__inner w-10 h-10 lg:w-12 lg:h-12 2xl:w-[58px] 2xl:h-[58px] bg-orange-100 rounded-full z-10 top-[2px] left-[2px] absolute">
         <div class="flex items-center justify-center w-full h-full [&>*]:-rotate-90">

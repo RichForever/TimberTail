@@ -1,13 +1,6 @@
 const scrollToUp = () => {
 
     const scrollToUpButton = document.querySelector('#scrollUp')
-    scrollToUpButton.addEventListener('click', (e) => {
-        e.preventDefault()
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    })
 
     window.onscroll = () => {
         let scrollTop = window.scrollY;
@@ -21,7 +14,6 @@ const scrollToUp = () => {
 
         document.querySelector("#scrollUp .scrollUp__background").style.background = `conic-gradient(#ff8811 ${degrees}deg, #ffe7cf ${degrees}deg)`;
     }
-
 
 }
 
