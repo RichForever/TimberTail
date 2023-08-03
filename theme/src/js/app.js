@@ -1,3 +1,7 @@
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
+
 import hamburger from './components/hamburger';
 import anchorScroll from './components/anchorScroll';
 import scrollToUp from './components/scrollToUp';

@@ -79,7 +79,14 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/i,
-        loader: 'esbuild-loader',
+        exclude: /node_modules/,
+        use: {
+          loader: 'esbuild-loader',
+          options: {
+            loader: 'js',
+            target: 'es2015'
+          }
+        }
       },
       {
         test: /\.s[ac]ss$/i,
@@ -121,14 +128,14 @@ module.exports = {
     alias: {
       images: path.join(__dirname, config.src.images),
       fonts: path.join(__dirname, config.src.fonts),
-      blocks: path.join(__dirname, 'theme/blocks')
+      blocks: path.join(__dirname, 'theme/blocks'),
     },
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          test: /[\\/]node_modules[\\/](?!alpinejs)/,
           name: "vendors",
           chunks: "all",
         },
