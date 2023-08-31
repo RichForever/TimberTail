@@ -26,7 +26,6 @@ class wpstarter extends Site {
 	    add_action('after_setup_theme', [$this, 'theme_supports']);
 	    add_action('after_setup_theme', [$this, 'remove_header_actions']);
 	    add_action('after_setup_theme', [$this, 'vendor_settings']);
-	    add_action('acf/init', [$this, 'acf_register_options']);
 	    add_action('acf/init', [$this, 'register_blocks']);
 	    add_action('block_categories_all', [$this, 'register_blocks_category']);
 	    add_action('init', [$this, 'register_images']);
@@ -103,17 +102,6 @@ class wpstarter extends Site {
 		$phpmailer->Host = 'mailhog';
 		$phpmailer->Port = 1025;
 		$phpmailer->IsSMTP();
-	}
-
-	public function acf_register_options() {
-		if( function_exists('acf_add_options_sub_page') ) {
-			$child = acf_add_options_sub_page(array(
-				'page_title'  => __('Theme settings'),
-				'menu_title'  => __('Theme settings'),
-				'parent_slug' => 'options-general.php',
-				'menu_slug' => 'theme-settings'
-			));
-		}
 	}
 
 	public function register_custom_theme_options() {
