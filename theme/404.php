@@ -6,8 +6,15 @@
  * @since wpstarter 1.0
  */
 
-use Timber\Timber;
+//use Timber\Timber;
+//
+//$context = Timber::context();
+//
+//Timber::render('404.twig', $context);
 
-$context = Timber::context();
+// add redirect to homepage instead of showing page
 
-Timber::render('404.twig', $context);
+header( "HTTP/1.1 301 Moved Permanently" );
+header( "Location: " . get_bloginfo( 'url' ) );
+exit();
+?>
