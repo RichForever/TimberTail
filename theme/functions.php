@@ -22,6 +22,7 @@ class wpstarter extends Site {
     public function __construct() {
 	    add_filter('timber/context', [$this, 'add_to_context']);
 	    add_filter('timber/twig', [$this, 'add_to_twig']);
+	    add_filter('timber/twig', [$this, 'support_polylang_functions']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
 	    add_action('after_setup_theme', [$this, 'theme_supports']);
 	    add_action('after_setup_theme', [$this, 'remove_header_actions']);
@@ -31,7 +32,7 @@ class wpstarter extends Site {
 	    add_action('init', [$this, 'register_images']);
         add_action('after_setup_theme', [ $this, 'register_icons']);
 	    add_action('init', [ $this, 'register_menus']);
-	    add_action('init', [$this, 'register_widgets']);
+	    add_action('widgets_init', [$this, 'register_widgets']);
         add_action('init', [$this, 'register_custom_post_types']);
         add_action('init', [$this, 'register_taxonomies']);
 	    add_action('init', [$this, 'register_custom_theme_options'] );
@@ -84,6 +85,13 @@ class wpstarter extends Site {
 
 	public function register_menus() {
 		require_once "lib/menus-register.php";
+	}
+
+	public function support_polylang_functions( $twig ) {
+		$twig->addFunction( new Twig\TwigFunction( 'pll_e', 'pll_e' ) );
+		$twig->addFunction( new Twig\TwigFunction( 'pll__', 'pll__' ) );
+
+		return $twig;
 	}
 
 	public function register_widgets() {
