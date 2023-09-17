@@ -1,6 +1,8 @@
-const theme = {
-   container: {
-      center: true,
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+module.exports = {
+   "container": {
+      "center": true,
    },
    "colors": {
       "orange": {
@@ -60,7 +62,7 @@ const theme = {
       "4xl": "3.812rem"
    },
    "fontFamily": {
-      "inter": "Inter"
+      "sans": ['Inter', ...defaultTheme.fontFamily.sans],
    },
    "gridTemplateRows": {
       "7": "repeat(7, minmax(0, 1fr))"
@@ -76,5 +78,4 @@ const theme = {
    //    "lg": "0.75rem",
    //    "xl": "3.125rem"
    // }
-};
-export default theme;
+}

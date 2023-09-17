@@ -1,4 +1,4 @@
-import customConfig from './tailwind.theme.config'
+import themeConfig from './tailwind.theme.config'
 
 module.exports = {
     content: [
@@ -9,12 +9,12 @@ module.exports = {
     ],
     theme: {
         extend: {
-            colors: customConfig.colors,
-            fontSize: customConfig.fontSize,
-            fontFamily: customConfig.fontFamily,
-            container: customConfig.container,
-            gridTemplateRows: customConfig.gridTemplateRows,
-            gridRowEnd: customConfig.gridRowEnd
+            colors: themeConfig.colors,
+            fontSize: themeConfig.fontSize,
+            fontFamily: themeConfig.fontFamily,
+            container: themeConfig.container,
+            gridTemplateRows: themeConfig.gridTemplateRows,
+            gridRowEnd: themeConfig.gridRowEnd
         },
     },
     plugins: [
