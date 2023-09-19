@@ -15,15 +15,16 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
+  blocks: "./theme/blocks",
   src: {
     main: './theme/src/',
-    scripts: './theme/src/js/',
-    styles: './theme/src/scss/',
+    scripts: './theme/src/js',
+    styles: './theme/src/scss',
     images: './theme/src/images',
     fonts: './theme/src/fonts',
   },
   dist: {
-    main: './theme/dist/',
+    main: './theme/dist',
     images: '',
     fonts: '',
   }
@@ -32,12 +33,12 @@ const config = {
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
-    "scripts": config.src.scripts + "app.js",
-    "blocks": config.src.scripts + "blocks.js",
-    "twig": config.src.scripts + "twig.js",
-    "styles": config.src.styles + "app.scss",
-    "theme": config.src.styles + "theme.scss",
-    "editor": config.src.styles + "editor-styles.scss",
+    "scripts": config.src.scripts + "/app.js",
+    "blocks": config.src.scripts + "/blocks.js",
+    "twig": config.src.scripts + "/twig.js",
+    "styles": config.src.styles + "/app.scss",
+    "theme": config.src.styles + "/theme.scss",
+    "editor": config.src.styles + "/editor-styles.scss",
   },
   output: {
     path: path.resolve(__dirname, config.dist.main),
@@ -50,7 +51,7 @@ module.exports = {
     new ProgressPlugin(),
     new RemoveEmptyScriptsPlugin(),
     new WebpackAssetsManifest({
-      output: path.resolve(__dirname, config.dist.main + "manifest.json"),
+      output: path.resolve(__dirname, config.dist.main + "/manifest.json"),
       customize(entry, original, manifest, asset) {
         const pattern = /\.(js|css)$/i;
         if (!pattern.test(entry.key)) {
@@ -128,7 +129,7 @@ module.exports = {
     alias: {
       images: path.join(__dirname, config.src.images),
       fonts: path.join(__dirname, config.src.fonts),
-      blocks: path.join(__dirname, 'theme/blocks'),
+      blocks: path.join(__dirname, config.blocks),
     },
   },
   optimization: {
