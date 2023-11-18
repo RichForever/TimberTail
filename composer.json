@@ -4,7 +4,7 @@
   "description": "A modern Wordpress theme using Timber, ACF, Tailwind CSS and Alpine JS",
   "license": "MIT",
   "require": {
-    "timber/timber": "^1.20.0",
+    "timber/timber": "^2.0",
     "wpengine/advanced-custom-fields-pro": "^6.0"
   },
   "repositories": [

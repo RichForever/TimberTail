@@ -12,12 +12,11 @@
  * @since wpstarter 1.0
  */
 
-use Timber\Timber;
-
-$context = Timber::context();
-
-$context['content'] = ob_get_contents();
-
+$timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile
+if ( ! isset( $timberContext ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
+}
+$timberContext['content'] = ob_get_contents();
 ob_end_clean();
-
-Timber::render('page-plugin.twig', $context);
+$templates = array( 'page-plugin.twig' );
+Timber::render( $templates, $timberContext );

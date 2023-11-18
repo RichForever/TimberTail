@@ -12,4 +12,5 @@
  * @since wpstarter 1.0
  */
 
+$GLOBALS['timberContext'] = Timber::context();
 ob_start();
