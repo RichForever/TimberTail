@@ -6,12 +6,10 @@
  * @since wpstarter 1.0
  */
 
-use Timber\PostQuery;
-use Timber\Timber;
+$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
-$context = Timber::context();
-
+$context          = Timber::context();
 $context['title'] = 'Search results for ' . get_search_query();
-$context['posts'] = new PostQuery();
+$context['posts'] = Timber::get_posts();
 
-Timber::render('search.twig', $context);
+Timber::render( $templates, $context );

@@ -1,5 +1,4 @@
 <?php
-use Timber\Timber;
 
 $context = Timber::context();
 $context['block'] = [
