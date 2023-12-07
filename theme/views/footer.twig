@@ -2,12 +2,19 @@
 {#    footer content here#}
 {#</footer>#}
 
-<button id="scrollUp" class="fixed right-6 bottom-6" style="display: none;" x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+<button
+        id="scrollUp"
+        class="fixed right-6 bottom-6"
+        style="display: none;"
+        x-data
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        @click.stop
+>
     <span class="sr-only">Kliknij i przewiń stronę na górę</span>
-    <div class="scrollUp__inner w-10 h-10 lg:w-12 lg:h-12 2xl:w-[58px] 2xl:h-[58px] bg-orange-100 rounded-full z-10 top-[2px] left-[2px] absolute">
-        <div class="flex items-center justify-center w-full h-full [&>*]:-rotate-90">
+    <div class="absolute z-10 h-10 w-10 rounded-full bg-blue-100 scrollUp__inner top-[2px] left-[2px] lg:h-12 lg:w-12 2xl:w-[58px] 2xl:h-[58px]">
+        <div class="flex items-center justify-center w-full h-full [&>*]:-rotate-90 text-blue-500">
             {{ function('wpstarter_get_icon', 'chevron') }}
         </div>
     </div>
-    <div class="scrollUp__background rounded-full w-[44px] h-[44px] lg:h-[52px] lg:w-[52px] 2xl:w-[62px] 2xl:h-[62px] bg-orange-500"></div>
+    <div class="rounded-full bg-blue-500 scrollUp__background w-[44px] h-[44px] lg:h-[52px] lg:w-[52px] 2xl:w-[62px] 2xl:h-[62px]"></div>
 </button>

@@ -12,7 +12,7 @@ const scrollToUp = () => {
 
         scrollToUpButton.style.display = document.body.scrollTop > 80 || document.documentElement.scrollTop > 80 ? "block" : "none";
 
-        document.querySelector("#scrollUp .scrollUp__background").style.background = `conic-gradient(#ff8811 ${degrees}deg, #ffe7cf ${degrees}deg)`;
+        document.querySelector("#scrollUp .scrollUp__background").style.background = `conic-gradient(#1f6ed6 ${degrees}deg, #ffffff ${degrees}deg)`;
     }
 
 }
