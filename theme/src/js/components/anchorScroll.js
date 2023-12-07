@@ -1,6 +1,6 @@
 const anchorScroll = () => {
-    const navbarItems = document.querySelectorAll("nav .navbar__menu a") // get all navbar items with anchor class
-    navbarItems.forEach((item) => {
+    const linkItems = document.querySelectorAll(".link__anchor a") // get all navbar items with anchor class
+    linkItems.forEach((item) => {
 
         item.addEventListener("click", (e) => {
             // e.preventDefault();
