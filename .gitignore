@@ -3,3 +3,5 @@ vendor
 node_modules
 theme/public
 theme/dist
+!docker/*
+!docker/auth.json
