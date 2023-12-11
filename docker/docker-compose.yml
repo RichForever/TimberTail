@@ -3,6 +3,7 @@ version: '3'
 services:
   # Mailhog
   mailhog:
+    container_name: ${PROJECT}
     image: mailhog/mailhog
     logging:
       driver: 'none'
