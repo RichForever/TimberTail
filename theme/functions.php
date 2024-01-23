@@ -22,6 +22,7 @@ class wpstarter extends Timber\Site {
 		add_action( 'after_setup_theme', [ $this, 'remove_header_actions' ] );
 		add_action( 'after_setup_theme', [ $this, 'vendor_settings' ] );
 		add_action( 'acf/init', [ $this, 'register_blocks' ] );
+		add_action('acf/init', [$this, 'acf_register_theme_options']);
 		add_action( 'block_categories_all', [ $this, 'register_blocks_category' ] );
 		add_action( 'init', [ $this, 'register_images' ] );
 		add_action( 'after_setup_theme', [ $this, 'register_icons' ] );
@@ -29,7 +30,7 @@ class wpstarter extends Timber\Site {
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 		add_action( 'init', [ $this, 'register_custom_post_types' ] );
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
-		add_action( 'init', [ $this, 'register_custom_theme_options' ] );
+		add_action( 'init', [ $this, 'register_theme_options_scripts' ] );
 		add_action( 'login_errors', [ $this, 'custom_login_error_message' ] );
 
 		// load only on local
@@ -106,8 +107,19 @@ class wpstarter extends Timber\Site {
 		$phpmailer->IsSMTP();
 	}
 
-	public function register_custom_theme_options() {
-		require( 'lib/custom-theme-options.php' );
+	public function acf_register_theme_options() {
+		if( function_exists('acf_add_options_sub_page') ) {
+			$child = acf_add_options_sub_page(array(
+				'page_title'  => __('Ustawienia motywu'),
+				'menu_title'  => __('Ustawienia motywu'),
+				'parent_slug' => 'options-general.php',
+				'menu_slug' => 'theme-settings'
+			));
+		}
+	}
+
+	public function register_theme_options_scripts() {
+		require( 'lib/theme-options-scripts.php' );
 	}
 
 	public function register_blocks_category( $categories ) {
