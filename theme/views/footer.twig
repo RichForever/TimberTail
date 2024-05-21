@@ -4,17 +4,14 @@
 
 <button
         id="scrollUp"
-        class="fixed right-6 bottom-6"
+        class="fixed right-6 bottom-6 w-16 h-16 z-10 rounded-full bg-[#fff5e6] shadow-[rgba(250,_158,_13,_0.25)_0px_4px_17px] items-center justify-center p-[.35rem] xl:p-[.3rem]"
         style="display: none;"
+        aria-label="Kliknij i przewiń stronę na górę"
         x-data
         @click="window.scrollTo({top: 0, behavior: 'smooth'})"
         @click.stop
 >
-    <span class="sr-only">Kliknij i przewiń stronę na górę</span>
-    <div class="absolute z-10 h-10 w-10 rounded-full bg-blue-100 scrollUp__inner top-[2px] left-[2px] lg:h-12 lg:w-12 2xl:w-[58px] 2xl:h-[58px]">
-        <div class="flex items-center justify-center w-full h-full [&>*]:-rotate-90 text-blue-500">
-            {{ function('wpstarter_get_icon', 'chevron') }}
-        </div>
+    <div class="w-full h-full flex items-center justify-center bg-white rounded-full [&>*]:h-4 [&>*]:w-4 [&>*]:xl:h-5 [&>*]:xl:w-5 [&>*]:rotate-90 text-california-500">
+        {{ function('wpstarter_get_icon', 'chevron-big') }}
     </div>
-    <div class="rounded-full bg-blue-500 scrollUp__background w-[44px] h-[44px] lg:h-[52px] lg:w-[52px] 2xl:w-[62px] 2xl:h-[62px]"></div>
 </button>
