@@ -33,12 +33,13 @@ const config = {
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
-    "scripts": config.src.scripts + "/app.js",
+    "app-scripts": config.src.scripts + "/app.js",
     "blocks": config.src.scripts + "/blocks.js",
     "twig": config.src.scripts + "/twig.js",
-    "styles": config.src.styles + "/app.scss",
+    "editor-scripts": config.src.scripts + "/editor-scripts.js",
+    "app-styles": config.src.styles + "/app.scss",
     "theme": config.src.styles + "/theme.scss",
-    "editor": config.src.styles + "/editor-styles.scss",
+    "editor-styles": config.src.styles + "/editor-styles.scss",
   },
   output: {
     path: path.resolve(__dirname, config.dist.main),
