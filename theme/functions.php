@@ -43,9 +43,22 @@ class wpstarter extends Timber\Site {
 
 	public function add_to_context( $context ) {
 		$context['site']        = $this;
-		$context['main_menu']   = Timber::get_menu( 'main_menu' );
-		$context['footer_menu'] = Timber::get_menu( 'footer_menu' );
 		$context['options']     = get_fields( 'option' );
+
+	        // add all created menus to context
+	        $menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+	        foreach ( $menus as $menu ) {
+	            $location = $menu->location;
+	            $slug = $menu->slug;
+	            $context['menu__'.$slug] = Timber::get_menu($slug);
+	        }
+	
+	        $widgets = wp_get_sidebars_widgets();
+	        foreach ( $widgets as $key => $widget ) {
+	            $context['widget__' . $key] = Timber::get_widgets( $key );
+	        }
+	
+	        $context['site_logo'] = get_custom_logo();
 
 		return $context;
 	}
