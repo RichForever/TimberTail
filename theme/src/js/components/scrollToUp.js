@@ -10,9 +10,9 @@ const scrollToUp = () => {
         let scrollPercentRounded = Math.round(scrollPercent * 100);
         let degrees = scrollPercent * 360;
 
-        scrollToUpButton.style.display = document.body.scrollTop > 80 || document.documentElement.scrollTop > 80 ? "block" : "none";
+        scrollToUpButton.style.display = document.body.scrollTop > 80 || document.documentElement.scrollTop > 80 ? "flex" : "none";
 
-        document.querySelector("#scrollUp .scrollUp__background").style.background = `conic-gradient(#1f6ed6 ${degrees}deg, #ffffff ${degrees}deg)`;
+        document.querySelector("#scrollUp").style.background = `conic-gradient(#FA9E0D ${degrees}deg, #FEE6C1 ${degrees}deg)`;
     }
 
 }
