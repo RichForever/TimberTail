@@ -1,16 +1,28 @@
-@use "../../blocks/sample-block-1/editor";
-
-@use "base" as base;
-@use "components" as components;
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html :where(.wp-block) {
-  max-width: 1200px;
-}
+.editor-styles-wrapper {
+    @import "base/fonts";
+    @import "base/typography";
+    //...
 
-h1.wp-block-post-title {
-  @apply text-4xl font-bold;
+    @import "components/buttons";
+    //...
+  
+    @import "../../blocks/sample-block-1/editor";
+    //...
+
+    .acf-block-component,
+    .editor-editor-canvas__post-title-wrapper {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    padding-bottom: 4rem !important;
+
+    h1.wp-block-post-title {
+      @apply text-4xl font-bold mx-auto mb-12;
+    }
 }
