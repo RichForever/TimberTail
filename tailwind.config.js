@@ -2,9 +2,11 @@ import themeConfig from './tailwind.theme.config'
 
 module.exports = {
     content: [
-        "./theme/**/*.{php,twig,html,js}",
-        "./theme/views/**/*.{php,twig,html,js}",
-        "./theme/src/js/**/*.js",
+        "./blocks/**/*.{php,twig,html,js}",
+        "./lib/**/*.php",
+        "./src/**/*.js",
+        "./views/**/*.twig",
+        "./*.{php,twig,html}",
         "./node_modules/flowbite/**/*.js"
     ],
     theme: {

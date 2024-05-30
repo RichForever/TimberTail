@@ -1,7 +1,7 @@
 auth.json
 vendor
 node_modules
-theme/public
-theme/dist
+public
+dist
 !docker/*
 !docker/auth.json
