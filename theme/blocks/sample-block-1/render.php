@@ -9,4 +9,4 @@ $context['block'] = [
 ];
 $context['attributes'] = $block['attributes'];
 
-Timber::render('blocks/sample-block-1.twig', $context);
+Timber::render('block.twig', $context);
