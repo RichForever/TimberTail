@@ -5,3 +5,4 @@ public
 dist
 !docker/*
 !docker/auth.json
+build

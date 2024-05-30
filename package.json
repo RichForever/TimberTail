@@ -9,7 +9,8 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "zip:prod": "node zip.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@webpack-cli/generators": "^3.0.1",
     "alpinejs": "^3.12.3",
+    "archiver": "^7.0.1",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
     "browser-sync-webpack-plugin": "^2.3.0",
