@@ -12,11 +12,7 @@ Timber\Timber::init();
 Timber::$dirname    = [ 'views', 'blocks' ];
 Timber::$autoescape = false;
 
-<<<<<<< HEAD:functions.php
-class TwigTail extends Timber\Site {
-=======
 class TimberTail extends Timber\Site {
->>>>>>> master:theme/functions.php
 	public function __construct() {
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
@@ -26,7 +22,7 @@ class TimberTail extends Timber\Site {
 		add_action( 'after_setup_theme', [ $this, 'remove_header_actions' ] );
 		add_action( 'after_setup_theme', [ $this, 'vendor_settings' ] );
 		add_action( 'acf/init', [ $this, 'register_blocks' ] );
-		add_action('acf/init', [$this, 'acf_register_theme_options']);
+		add_action( 'acf/init', [ $this, 'acf_register_theme_options' ] );
 		add_action( 'block_categories_all', [ $this, 'register_blocks_category' ] );
 		add_action( 'init', [ $this, 'register_images' ] );
 		add_action( 'after_setup_theme', [ $this, 'register_icons' ] );
@@ -46,23 +42,23 @@ class TimberTail extends Timber\Site {
 	}
 
 	public function add_to_context( $context ) {
-		$context['site']        = $this;
-		$context['options']     = get_fields( 'option' );
+		$context['site']    = $this;
+		$context['options'] = get_fields( 'option' );
 
-	        // add all created menus to context
-	        $menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
-	        foreach ( $menus as $menu ) {
-	            $location = $menu->location;
-	            $slug = $menu->slug;
-	            $context['menu__'.$slug] = Timber::get_menu($slug);
-	        }
-	
-	        $widgets = wp_get_sidebars_widgets();
-	        foreach ( $widgets as $key => $widget ) {
-	            $context['widget__' . $key] = Timber::get_widgets( $key );
-	        }
-	
-	        $context['site_logo'] = get_custom_logo();
+		// add all created menus to context
+		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+		foreach ( $menus as $menu ) {
+			$location                    = $menu->location;
+			$slug                        = $menu->slug;
+			$context[ 'menu__' . $slug ] = Timber::get_menu( $slug );
+		}
+
+		$widgets = wp_get_sidebars_widgets();
+		foreach ( $widgets as $key => $widget ) {
+			$context[ 'widget__' . $key ] = Timber::get_widgets( $key );
+		}
+
+		$context['site_logo'] = get_custom_logo();
 
 		return $context;
 	}
@@ -125,13 +121,13 @@ class TimberTail extends Timber\Site {
 	}
 
 	public function acf_register_theme_options() {
-		if( function_exists('acf_add_options_sub_page') ) {
-			$child = acf_add_options_sub_page(array(
-				'page_title'  => __('Ustawienia motywu'),
-				'menu_title'  => __('Ustawienia motywu'),
+		if ( function_exists( 'acf_add_options_sub_page' ) ) {
+			$child = acf_add_options_sub_page( array(
+				'page_title'  => __( 'Ustawienia motywu' ),
+				'menu_title'  => __( 'Ustawienia motywu' ),
 				'parent_slug' => 'options-general.php',
-				'menu_slug' => 'theme-settings'
-			));
+				'menu_slug'   => 'theme-settings'
+			) );
 		}
 	}
 
@@ -153,7 +149,8 @@ class TimberTail extends Timber\Site {
 
 }
 
-<<<<<<< HEAD:functions.php
+<<<<
+<<< HEAD:functions.php
 new TwigTail();
 =======
 new TimberTail();
