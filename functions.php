@@ -2,8 +2,8 @@
 
 /**
  * @package WordPress
- * @subpackage TwigTail
- * @since TwigTail 1.0.0
+ * @subpackage TimberTail
+ * @since TimberTail 1.0.0
  */
 
 require_once dirname( __FILE__ ) . '/vendor/autoload.php';
@@ -12,7 +12,11 @@ Timber\Timber::init();
 Timber::$dirname    = [ 'views', 'blocks' ];
 Timber::$autoescape = false;
 
+<<<<<<< HEAD:functions.php
 class TwigTail extends Timber\Site {
+=======
+class TimberTail extends Timber\Site {
+>>>>>>> master:theme/functions.php
 	public function __construct() {
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
@@ -149,4 +153,8 @@ class TwigTail extends Timber\Site {
 
 }
 
+<<<<<<< HEAD:functions.php
 new TwigTail();
+=======
+new TimberTail();
+>>>>>>> master:theme/functions.php

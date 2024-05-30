@@ -8,8 +8,8 @@
  * WooCommerce) you can delete this file and footer.php
  *
  * @package WordPress
- * @subpackage TwigTail
- * @since TwigTail 1.0.0
+ * @subpackage TimberTail
+ * @since TimberTail 1.0.0
  */
 
 $GLOBALS['timberContext'] = Timber::context();
