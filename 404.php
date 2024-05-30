@@ -2,8 +2,8 @@
 
 /**
  * @package WordPress
- * @subpackage wpstarter
- * @since wpstarter 1.0
+ * @subpackage TwigTail
+ * @since TwigTail 1.0.0
  */
 
 header( "HTTP/1.1 301 Moved Permanently" );

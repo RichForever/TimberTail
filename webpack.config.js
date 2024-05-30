@@ -15,16 +15,16 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
-  blocks: "./theme/blocks",
+  blocks: "./blocks",
   src: {
-    main: './theme/src/',
-    scripts: './theme/src/js',
-    styles: './theme/src/scss',
-    images: './theme/src/images',
-    fonts: './theme/src/fonts',
+    main: './src/',
+    scripts: './src/js',
+    styles: './src/scss',
+    images: './src/images',
+    fonts: './src/fonts',
   },
   dist: {
-    main: './theme/dist',
+    main: './dist',
     images: '',
     fonts: '',
   }
@@ -69,11 +69,11 @@ module.exports = {
       port: 3000,
       proxy: 'http://dev.site',
       files: [
-          "./theme/**/*.twig",
-          "./theme/**/*.php",
-          "./theme/**/*.scss",
-          "./theme/**/*.css",
-          "./theme/**/*.js"
+          "./**/*.twig",
+          "./**/*.php",
+          "./**/*.scss",
+          "./**/*.css",
+          "./**/*.js"
       ]
     })
   ],

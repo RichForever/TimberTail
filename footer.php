@@ -8,8 +8,8 @@
  * WooCommerce) you can delete this file and header.php
  *
  * @package WordPress
- * @subpackage wpstarter
- * @since wpstarter 1.0
+ * @subpackage TwigTail
+ * @since TwigTail 1.0.0
  */
 
 $timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile

@@ -6,12 +6,5 @@ module.exports = {
     require('tailwindcss'),
     require('autoprefixer'),
     require('postcss-pxtorem'),
-    // purgecss({
-    //   content: [
-    //       './theme/**/*.twig',
-    //       './theme/views/**/*.twig'
-    //   ],
-    //   safelist: purgecssWordpress.safelist,
-    // })
   ]
 }
