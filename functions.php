@@ -149,9 +149,4 @@ class TimberTail extends Timber\Site {
 
 }
 
-<<<<
-<<< HEAD:functions.php
-new TwigTail();
-=======
 new TimberTail();
->>>>>>> master:theme/functions.php
