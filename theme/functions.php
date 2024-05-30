@@ -2,8 +2,8 @@
 
 /**
  * @package WordPress
- * @subpackage wpstarter
- * @since wpstarter 1.0
+ * @subpackage TimberTail
+ * @since TimberTail 1.0.0
  */
 
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
@@ -12,7 +12,7 @@ Timber\Timber::init();
 Timber::$dirname    = [ 'views', 'blocks' ];
 Timber::$autoescape = false;
 
-class wpstarter extends Timber\Site {
+class TimberTail extends Timber\Site {
 	public function __construct() {
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
@@ -149,4 +149,4 @@ class wpstarter extends Timber\Site {
 
 }
 
-new wpstarter();
+new TimberTail();

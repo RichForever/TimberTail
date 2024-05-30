@@ -2,8 +2,8 @@
 
 /**
  * @package WordPress
- * @subpackage wpstarter
- * @since wpstarter 1.0
+ * @subpackage TimberTail
+ * @since TimberTail 1.0.0
  */
 
 global $wp_query;

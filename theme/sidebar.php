@@ -2,8 +2,8 @@
 
 /**
  * @package WordPress
- * @subpackage Timberland
- * @since wpstarter 1.0
+ * @subpackage TimberTail
+ * @since TimberTail 1.0.0
  */
 
 Timber::render( array( 'sidebar.twig' ), $data );

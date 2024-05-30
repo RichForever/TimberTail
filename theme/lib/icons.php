@@ -10,7 +10,7 @@ function acf_icon_path_suffix( $path_suffix ) {
     return '/assets/icons/';
 }
 
-function wpstarter_get_icon( $filename ) {
+function timbertail_get_icon( $filename ) {
     $path = get_stylesheet_directory() . '/assets/icons/' . $filename . '.svg';
     if ( file_exists( $path ) ) {
         return file_get_contents( $path );
