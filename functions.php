@@ -30,6 +30,7 @@ class TimberTail extends Timber\Site {
 		add_action( 'init', [ $this, 'register_custom_post_types' ] );
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
 		add_action( 'admin_menu', [ $this, 'register_theme_settings_page' ] );
+		add_action( 'init', [ $this, 'display_theme_settings_fields' ] );
 		add_action( 'login_errors', [ $this, 'custom_login_error_message' ] );
 
 		// load only on local
@@ -121,6 +122,10 @@ class TimberTail extends Timber\Site {
 
 	public function register_theme_settings_page() {
 		require( 'lib/theme-settings-page.php' );
+	}
+
+	public function display_theme_settings_fields() {
+		require( 'lib/theme-settings-fields.php' );
 	}
 
 	public function register_blocks_category( $categories ) {
