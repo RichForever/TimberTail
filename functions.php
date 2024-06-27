@@ -129,7 +129,17 @@ class TimberTail extends Timber\Site {
 	}
 
 	public function register_blocks_category( $categories ) {
-		return array_merge( [ [ 'slug' => 'custom', 'title' => __( 'TimberTail' ) ] ], $categories );
+        $cats = [
+            [
+                'slug' => 'tt-sections',
+                'title' => __( 'TimberTail Sections' )
+            ],
+            [
+                'slug' => 'tt-blocks',
+                'title' => __( 'TimberTail Single Blocks' )
+            ]
+        ];
+		return array_merge( $cats, $categories );
 	}
 
 	public function register_blocks() {
