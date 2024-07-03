@@ -45,6 +45,8 @@ class TimberTail extends Timber\Site {
 		$context['site']    = $this;
 		$context['options'] = get_fields( 'option' );
 
+		$context['main_menu']   = Timber::get_menu( 'main_menu' );
+
 		// add all created menus to context
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 		foreach ( $menus as $menu ) {
