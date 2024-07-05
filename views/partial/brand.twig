@@ -1,5 +1,11 @@
-<a href="{{ site.url }}" class="flex items-center gap-4 text-purple-500 navbar__brand" aria-label="Przejdź do strony głównej">
-    <div class="hidden lg:inline-block">
-        <h2 class="text-xl font-bold whitespace-nowrap text-purple-500 leading-none">TimberTail</h2>
+{% if site_logo %}
+    <div class="max-w-[80px] lg:max-w-[140px] xl:max-w-[180px]">
+        {{ site_logo }}
     </div>
-</a>
+{% else %}
+    <a href="{{ site.url }}" class="navbar__brand" aria-label="Przejdź do strony głównej">
+        <div class="inline-block">
+            <hq class="text-xl font-bold font-brico whitespace-nowrap text-picton-blue leading-none">Planet English</hq>
+        </div>
+    </a>
+{% endif %}

@@ -3,7 +3,7 @@ const archiver = require('archiver');
 const path = require('path');
 
 // Define the theme name
-const themeName = 'your-theme-name';
+const themeName = path.basename(__dirname);
 
 // Ensure the build directory exists
 const buildDir = path.join(__dirname, 'build');
@@ -12,7 +12,7 @@ if (!fs.existsSync(buildDir)) {
 }
 
 // Specify the output file name and path
-const output = fs.createWriteStream(path.join(buildDir, 'theme.zip'));
+const output = fs.createWriteStream(path.join(buildDir, `${themeName}-theme.zip`));
 const archive = archiver('zip', {
     zlib: { level: 9 } // Compression level
 });

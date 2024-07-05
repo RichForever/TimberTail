@@ -45,6 +45,8 @@ class TimberTail extends Timber\Site {
 		$context['site']    = $this;
 		$context['options'] = get_fields( 'option' );
 
+		$context['main_menu']   = Timber::get_menu( 'main_menu' );
+
 		// add all created menus to context
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
 		foreach ( $menus as $menu ) {
@@ -129,7 +131,17 @@ class TimberTail extends Timber\Site {
 	}
 
 	public function register_blocks_category( $categories ) {
-		return array_merge( [ [ 'slug' => 'custom', 'title' => __( 'TimberTail' ) ] ], $categories );
+        $cats = [
+            [
+                'slug' => 'tt-sections',
+                'title' => __( 'TimberTail Sections' )
+            ],
+            [
+                'slug' => 'tt-blocks',
+                'title' => __( 'TimberTail Single Blocks' )
+            ]
+        ];
+		return array_merge( $cats, $categories );
 	}
 
 	public function register_blocks() {
