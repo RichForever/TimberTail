@@ -6,8 +6,7 @@ module.exports = {
         "./lib/**/*.php",
         "./src/**/*.js",
         "./views/**/*.twig",
-        "./*.{php,twig,html}",
-        "./node_modules/flowbite/**/*.js"
+        "./*.{php,twig,html}"
     ],
     theme: {
         extend: {
@@ -20,7 +19,6 @@ module.exports = {
         },
     },
     plugins: [
-        require('flowbite/plugin'),
         // require('@tailwindcss/forms')
     ],
     safelist: [

@@ -1,9 +1,377 @@
 {
   "version": 2,
   "settings": {
-    "appearanceTools": false,
-    "color": [],
+    "appearanceTools": true,
+    "color": {
+      "custom": false,
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "orange-100",
+          "color": "#ffe7cf",
+          "name": "Orange 100"
+        },
+        {
+          "slug": "orange-200",
+          "color": "#ffcfa0",
+          "name": "Orange 200"
+        },
+        {
+          "slug": "orange-300",
+          "color": "#ffb870",
+          "name": "Orange 300"
+        },
+        {
+          "slug": "orange-400",
+          "color": "#ffa041",
+          "name": "Orange 400"
+        },
+        {
+          "slug": "orange-500",
+          "color": "#ff8811",
+          "name": "Orange 500"
+        },
+        {
+          "slug": "orange-600",
+          "color": "#cc6d0e",
+          "name": "Orange 600"
+        },
+        {
+          "slug": "orange-700",
+          "color": "#99520a",
+          "name": "Orange 700"
+        },
+        {
+          "slug": "orange-800",
+          "color": "#663607",
+          "name": "Orange 800"
+        },
+        {
+          "slug": "orange-900",
+          "color": "#331b03",
+          "name": "Orange 900"
+        },
+        {
+          "slug": "white-100",
+          "color": "#ffffff",
+          "name": "White 100"
+        },
+        {
+          "slug": "white-200",
+          "color": "#ffffff",
+          "name": "White 200"
+        },
+        {
+          "slug": "white-300",
+          "color": "#ffffff",
+          "name": "White 300"
+        },
+        {
+          "slug": "white-400",
+          "color": "#ffffff",
+          "name": "White 400"
+        },
+        {
+          "slug": "white-500",
+          "color": "#ffffff",
+          "name": "White 500"
+        },
+        {
+          "slug": "white-600",
+          "color": "#cccccc",
+          "name": "White 600"
+        },
+        {
+          "slug": "white-700",
+          "color": "#999999",
+          "name": "White 700"
+        },
+        {
+          "slug": "white-800",
+          "color": "#666666",
+          "name": "White 800"
+        },
+        {
+          "slug": "white-900",
+          "color": "#333333",
+          "name": "White 900"
+        },
+        {
+          "slug": "black-100",
+          "color": "#cccccc",
+          "name": "Black 100"
+        },
+        {
+          "slug": "black-200",
+          "color": "#999999",
+          "name": "Black 200"
+        },
+        {
+          "slug": "black-300",
+          "color": "#666666",
+          "name": "Black 300"
+        },
+        {
+          "slug": "black-400",
+          "color": "#333333",
+          "name": "Black 400"
+        },
+        {
+          "slug": "black-500",
+          "color": "#000000",
+          "name": "Black 500"
+        },
+        {
+          "slug": "black-600",
+          "color": "#000000",
+          "name": "Black 600"
+        },
+        {
+          "slug": "black-700",
+          "color": "#000000",
+          "name": "Black 700"
+        },
+        {
+          "slug": "black-800",
+          "color": "#000000",
+          "name": "Black 800"
+        },
+        {
+          "slug": "black-900",
+          "color": "#000000",
+          "name": "Black 900"
+        },
+        {
+          "slug": "purple-100",
+          "color": "#d7d8df",
+          "name": "Purple 100"
+        },
+        {
+          "slug": "purple-200",
+          "color": "#afb2c0",
+          "name": "Purple 200"
+        },
+        {
+          "slug": "purple-300",
+          "color": "#888ba0",
+          "name": "Purple 300"
+        },
+        {
+          "slug": "purple-400",
+          "color": "#606581",
+          "name": "Purple 400"
+        },
+        {
+          "slug": "purple-500",
+          "color": "#383e61",
+          "name": "Purple 500"
+        },
+        {
+          "slug": "purple-600",
+          "color": "#2d324e",
+          "name": "Purple 600"
+        },
+        {
+          "slug": "purple-700",
+          "color": "#22253a",
+          "name": "Purple 700"
+        },
+        {
+          "slug": "purple-800",
+          "color": "#161927",
+          "name": "Purple 800"
+        },
+        {
+          "slug": "purple-900",
+          "color": "#0b0c13",
+          "name": "Purple 900"
+        }
+      ]
+    },
+    "spacing": {
+      "blockGap": true,
+      "margin": true,
+      "padding": true,
+      "spacingSizes": [
+        {
+          "name": "Zero",
+          "size": "0px",
+          "slug": "zero"
+        },
+        {
+          "name": "Px",
+          "size": "1px",
+          "slug": "px"
+        },
+        {
+          "name": "0.5",
+          "size": "0.125rem",
+          "slug": "0-5"
+        },
+        {
+          "name": "1",
+          "size": "0.25rem",
+          "slug": "1"
+        },
+        {
+          "name": "1.5",
+          "size": "0.375rem",
+          "slug": "1-5"
+        },
+        {
+          "name": "2",
+          "size": "0.5rem",
+          "slug": "2"
+        },
+        {
+          "name": "2.5",
+          "size": "0.625rem",
+          "slug": "2-5"
+        },
+        {
+          "name": "3",
+          "size": "0.75rem",
+          "slug": "3"
+        },
+        {
+          "name": "3.5",
+          "size": "0.875rem",
+          "slug": "3-5"
+        },
+        {
+          "name": "4",
+          "size": "1rem",
+          "slug": "4"
+        },
+        {
+          "name": "5",
+          "size": "1.25rem",
+          "slug": "5"
+        },
+        {
+          "name": "6",
+          "size": "1.5rem",
+          "slug": "6"
+        },
+        {
+          "name": "7",
+          "size": "1.75rem",
+          "slug": "7"
+        },
+        {
+          "name": "8",
+          "size": "2rem",
+          "slug": "8"
+        },
+        {
+          "name": "9",
+          "size": "2.25rem",
+          "slug": "9"
+        },
+        {
+          "name": "10",
+          "size": "2.5rem",
+          "slug": "10"
+        },
+        {
+          "name": "11",
+          "size": "2.75rem",
+          "slug": "11"
+        },
+        {
+          "name": "12",
+          "size": "3rem",
+          "slug": "12"
+        },
+        {
+          "name": "14",
+          "size": "3.5rem",
+          "slug": "14"
+        },
+        {
+          "name": "16",
+          "size": "4rem",
+          "slug": "16"
+        },
+        {
+          "name": "20",
+          "size": "5rem",
+          "slug": "20"
+        },
+        {
+          "name": "24",
+          "size": "6rem",
+          "slug": "24"
+        },
+        {
+          "name": "28",
+          "size": "7rem",
+          "slug": "28"
+        },
+        {
+          "name": "32",
+          "size": "8rem",
+          "slug": "32"
+        },
+        {
+          "name": "36",
+          "size": "9rem",
+          "slug": "36"
+        },
+        {
+          "name": "40",
+          "size": "10rem",
+          "slug": "40"
+        },
+        {
+          "name": "44",
+          "size": "11rem",
+          "slug": "44"
+        },
+        {
+          "name": "48",
+          "size": "12rem",
+          "slug": "48"
+        },
+        {
+          "name": "52",
+          "size": "13rem",
+          "slug": "52"
+        },
+        {
+          "name": "56",
+          "size": "14rem",
+          "slug": "56"
+        },
+        {
+          "name": "60",
+          "size": "15rem",
+          "slug": "60"
+        },
+        {
+          "name": "64",
+          "size": "16rem",
+          "slug": "64"
+        },
+        {
+          "name": "72",
+          "size": "18rem",
+          "slug": "72"
+        },
+        {
+          "name": "80",
+          "size": "20rem",
+          "slug": "80"
+        },
+        {
+          "name": "96",
+          "size": "24rem",
+          "slug": "96"
+        }
+      ]
+    },
     "typography": {
+      "fluid": false,
       "fontSizes": [
         {
           "name": "xs",
@@ -68,7 +436,7 @@
       ]
     },
     "layout": {
-      "contentSize": "840px",
+      "contentSize": "1536px",
       "wideSize": "1100px"
     }
   }
