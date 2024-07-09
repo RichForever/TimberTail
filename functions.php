@@ -29,7 +29,7 @@ class TimberTail extends Timber\Site {
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 		add_action( 'init', [ $this, 'register_custom_post_types' ] );
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
-		add_action( 'admin_menu', [ $this, 'register_theme_settings_page' ] );
+		add_action( 'init', [ $this, 'register_theme_settings_page' ] );
 		add_action( 'init', [ $this, 'display_theme_settings_fields' ] );
 		add_action( 'login_errors', [ $this, 'custom_login_error_message' ] );
 
