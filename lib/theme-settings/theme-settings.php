@@ -50,7 +50,7 @@ function timbertail_theme_settings_page_html()
 
     ?>
     <div class="wrap">
-        <div class="min-h-full mt-8" x-data="{ activeTab: 'custom_codes' }">
+        <div class="min-h-full mt-8 shadow" x-data="{ activeTab: 'custom_codes' }">
             <nav class="bg-[#0b1120]">
                 <div class="px-8">
                     <div class="flex h-16 items-center justify-between">
@@ -72,13 +72,13 @@ function timbertail_theme_settings_page_html()
                     </div>
                 </div>
             </nav>
-            <header class="bg-white shadow">
+            <header class="bg-white">
                 <div class="px-4 py-6 px-8">
                     <h1 class="text-3xl font-bold tracking-tight text-gray-900"
                         x-text="activeTab === 'custom_codes' ? 'Custom Codes' : ''"></h1>
                 </div>
             </header>
-            <main class="bg-white shadow">
+            <main class="bg-white">
                 <div class="px-4 py-6 px-8">
                     <div x-show="activeTab === 'custom_codes'">
                         <?php Theme_Settings_Custom_Codes::timbertail_render_custom_codes_settings_page(); ?>
