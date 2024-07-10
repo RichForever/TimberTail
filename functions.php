@@ -123,7 +123,7 @@ class TimberTail extends Timber\Site {
 	}
 
 	public function register_theme_settings_page() {
-		require( 'lib/theme-settings-page.php' );
+		require( 'lib/theme-settings/theme-settings.php' );
 	}
 
 	public function display_theme_settings_fields() {
