@@ -1,19 +1,23 @@
-.navbar.active .navbar__hamburger .span__item {
+body:has(.navbar.navbar--open) {
+  overflow: hidden;
+}
+
+.navbar.navbar--open .navbar__hamburger .span__item {
   @apply translate-x-10
 }
 
-.navbar.active .navbar__close {
+.navbar.navbar--open .navbar__close {
   @apply translate-x-0 w-12
 }
 
-.navbar.active .navbar__close > span:first-of-type {
+.navbar.navbar--open .navbar__close > span:first-of-type {
   @apply rotate-45
 }
 
-.navbar.active .navbar__close > span:last-of-type {
+.navbar.navbar--open .navbar__close > span:last-of-type {
   @apply -rotate-45
 }
 
-.navbar.active .navbar__menu {
+.navbar.navbar--open .navbar__menu {
   @apply block
 }
