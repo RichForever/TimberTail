@@ -30,8 +30,8 @@ class TimberTail extends Timber\Site {
 		add_action( 'init', [ $this, 'register_custom_post_types' ] );
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
 		add_action( 'init', [ $this, 'register_theme_settings_page' ] );
-		add_action( 'init', [ $this, 'display_theme_settings_fields' ] );
 		add_action( 'login_errors', [ $this, 'custom_login_error_message' ] );
+		add_filter( 'upload_mimes', [ $this, 'register_svg_filetype' ] );
 
 		// load only on local
 		if ( 'local' === wp_get_environment_type() ) {
@@ -123,11 +123,7 @@ class TimberTail extends Timber\Site {
 	}
 
 	public function register_theme_settings_page() {
-		require( 'lib/theme-settings/theme-settings.php' );
-	}
-
-	public function display_theme_settings_fields() {
-		require( 'lib/theme-settings-fields.php' );
+		require('lib/theme-settings/theme-settings.php');
 	}
 
 	public function register_blocks_category( $categories ) {
@@ -150,6 +146,13 @@ class TimberTail extends Timber\Site {
 
 	public function vendor_settings() {
 		require_once "lib/vendor-settings.php";
+	}
+
+	function register_svg_filetype($file_types){
+		$newFileTypes = [];
+		$newFileTypes['svg'] = 'image/svg+xml';
+		$file_types = array_merge($file_types, $newFileTypes );
+		return $file_types;
 	}
 
 }
