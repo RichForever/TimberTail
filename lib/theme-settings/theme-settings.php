@@ -48,7 +48,7 @@ add_action('admin_menu', 'timbertail_add_theme_menu');
 
 function timbertail_theme_settings_init()
 {
-	if (function_exists('pll_is_active') && pll_is_active()) {
+	if (function_exists('pll_count_posts')) {
 		Theme_Settings_Custom_Codes::timbertail_register_custom_codes_settings();
 	} else {
 		add_action('admin_notices', 'timbertail_polylang_not_active_notice');
@@ -65,7 +65,7 @@ function timbertail_polylang_not_active_notice() {
 function timbertail_theme_settings_page_html()
 {
 	// Check if Polylang is active before rendering the page
-	if (!function_exists('pll_is_active') || !pll_is_active()) {
+	if (!function_exists('pll_count_posts')) {
 		return;
 	}
 
