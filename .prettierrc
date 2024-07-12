@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@destination/prettier-plugin-twig",
+    "@prettier/plugin-php"
+  ],
+  "tailwindConfig": "./tailwind.config.js"
+}

@@ -9,7 +9,9 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "watch": "webpack --watch",
-    "zip": "node zip.js"
+    "zip": "node zip.js",
+    "prettier:check": "npx prettier . --check",
+    "prettier:write": "npx prettier . --write"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +19,9 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "@destination/prettier-plugin-twig": "^1.5.0",
     "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@prettier/plugin-php": "^0.22.2",
     "@webpack-cli/generators": "^3.0.1",
     "alpinejs": "^3.12.3",
     "archiver": "^7.0.1",
@@ -38,7 +42,8 @@
     "postcss": "^8.4.21",
     "postcss-loader": "^8.1.1",
     "postcss-pxtorem": "^6.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "progress-webpack-plugin": "^1.0.16",
     "purgecss-with-wordpress": "^6.0.0",
     "sass": "^1.77.3",
