@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 .editor-styles-wrapper {
-    @import "base/fonts";
-    @import "base/typography";
-    //...
+  @import "base/fonts";
+  @import "base/typography";
+  //...
 
-    @import "components/buttons";
-    //...
-  
-    @import "../../blocks/sample-block-1/editor";
-    //...
+  @import "components/buttons";
+  //...
 
-    .acf-block-component,
-    .editor-editor-canvas__post-title-wrapper {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  @import "../../blocks/sample-block-1/editor";
+  //...
 
-    padding-bottom: 4rem !important;
+  .acf-block-component,
+  .editor-editor-canvas__post-title-wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    h1.wp-block-post-title {
-      @apply text-4xl font-bold mx-auto mb-12;
-    }
+  padding-bottom: 4rem !important;
+
+  h1.wp-block-post-title {
+    @apply mx-auto mb-12 text-4xl font-bold;
+  }
 }

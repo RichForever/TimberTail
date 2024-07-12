@@ -12,12 +12,12 @@
   },
   "repositories": [
     {
-      "type":"composer",
-      "url":"https://connect.advancedcustomfields.com"
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
     },
     {
-      "type":"composer",
-      "url":"https://wpackagist.org",
+      "type": "composer",
+      "url": "https://wpackagist.org",
       "only": [
         "wpackagist-plugin/*",
         "wpackagist-theme/*"
@@ -26,7 +26,9 @@
   ],
   "extra": {
     "installer-paths": {
-      "../../plugins/{$name}/": ["type:wordpress-plugin"]
+      "../../plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
     }
   },
   "config": {

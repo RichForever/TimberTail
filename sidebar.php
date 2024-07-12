@@ -6,4 +6,4 @@
  * @since TimberTail 1.0.0
  */
 
-Timber::render( array( 'sidebar.twig' ), $data );
+Timber::render(["sidebar.twig"], $data);

@@ -12,5 +12,5 @@
  * @since TimberTail 1.0.0
  */
 
-$GLOBALS['timberContext'] = Timber::context();
+$GLOBALS["timberContext"] = Timber::context();
 ob_start();

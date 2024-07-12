@@ -3,21 +3,21 @@ body:has(.navbar.navbar--open) {
 }
 
 .navbar.navbar--open .navbar__hamburger .span__item {
-  @apply translate-x-10
+  @apply translate-x-10;
 }
 
 .navbar.navbar--open .navbar__close {
-  @apply translate-x-0 w-12
+  @apply w-12 translate-x-0;
 }
 
 .navbar.navbar--open .navbar__close > span:first-of-type {
-  @apply rotate-45
+  @apply rotate-45;
 }
 
 .navbar.navbar--open .navbar__close > span:last-of-type {
-  @apply -rotate-45
+  @apply -rotate-45;
 }
 
 .navbar.navbar--open .navbar__menu {
-  @apply block
+  @apply block;
 }

@@ -7,6 +7,6 @@
  */
 
 $context = Timber::context();
-$context['posts'] = Timber::get_posts();
+$context["posts"] = Timber::get_posts();
 
-Timber::render( 'searchform.twig', $context );
+Timber::render("searchform.twig", $context);

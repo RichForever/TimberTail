@@ -6,25 +6,25 @@
  * @since TimberTail 1.0.0
  */
 
-$templates = array( 'archive.twig', 'index.twig' );
+$templates = ["archive.twig", "index.twig"];
 
 $context = Timber::context();
 
-$context['title'] = 'Archiwum';
+$context["title"] = "Archiwum";
 
-if ( is_day() ) {
-	$context['title'] = 'Archiwum: ' . get_the_date( 'D M Y' );
-} elseif ( is_month() ) {
-	$context['title'] = 'Archiwum: ' . get_the_date( 'M Y' );
-} elseif ( is_year() ) {
-	$context['title'] = 'Archiwum: ' . get_the_date( 'Y' );
-} elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+if (is_day()) {
+    $context["title"] = "Archiwum: " . get_the_date("D M Y");
+} elseif (is_month()) {
+    $context["title"] = "Archiwum: " . get_the_date("M Y");
+} elseif (is_year()) {
+    $context["title"] = "Archiwum: " . get_the_date("Y");
+} elseif (is_tag()) {
+    $context["title"] = single_tag_title("", false);
+} elseif (is_post_type_archive()) {
+    $context["title"] = post_type_archive_title("", false);
+    array_unshift($templates, "archive-" . get_post_type() . ".twig");
 }
 
-$context['posts'] = Timber::get_posts();
+$context["posts"] = Timber::get_posts();
 
-Timber::render( $templates, $context );
+Timber::render($templates, $context);
