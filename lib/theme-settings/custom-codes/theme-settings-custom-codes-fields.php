@@ -1,22 +1,24 @@
 <?php
 function timbertail_render_custom_code($type)
 {
-    $current_lang = pll_current_language();
-    $custom_codes = "";
+	if(function_exists("pll_current_language")) {
+		$current_lang = pll_current_language();
+		$custom_codes = "";
 
-    if ($current_lang) {
-        $custom_codes = get_option(
-            "custom_codes_" . $type . "_" . $current_lang
-        );
-    }
+		if ($current_lang) {
+			$custom_codes = get_option(
+				"custom_codes_" . $type . "_" . $current_lang
+			);
+		}
 
-    if (empty($custom_codes)) {
-        $custom_codes = get_option("custom_codes_" . $type);
-    }
+		if (empty($custom_codes)) {
+			$custom_codes = get_option("custom_codes_" . $type);
+		}
 
-    if (!empty($custom_codes)) {
-        echo $custom_codes;
-    }
+		if (!empty($custom_codes)) {
+			echo $custom_codes;
+		}
+	}
 }
 
 function timbertail_render_custom_code_head()
