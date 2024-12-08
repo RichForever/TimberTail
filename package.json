@@ -11,7 +11,8 @@
     "watch": "webpack --watch",
     "zip": "node zip.js",
     "prettier:check": "npx prettier . --check",
-    "prettier:write": "npx prettier . --write"
+    "prettier:write": "npx prettier . --write",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "css-minimizer-webpack-plugin": "^7.0.0",
     "esbuild-loader": "^4.0.2",
     "glob-all": "^3.3.1",
+    "husky": "^9.1.7",
     "image-minimizer-webpack-plugin": "^4.0.1",
     "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
