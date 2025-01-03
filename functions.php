@@ -31,6 +31,7 @@ class TimberTail extends Timber\Site
         add_action("widgets_init", [$this, "register_widgets"]);
         add_action("init", [$this, "register_custom_post_types"]);
         add_action("init", [$this, "register_taxonomies"]);
+        add_action("login_errors", [$this, "custom_login_error_message"]);
 
         // load only on local
         if ("local" === wp_get_environment_type()) {
@@ -68,6 +69,11 @@ class TimberTail extends Timber\Site
     public function add_to_twig($twig)
     {
         return $twig;
+    }
+
+    public function custom_login_error_message()
+    {
+        return "Błąd!";
     }
 
     public function remove_header_actions()
