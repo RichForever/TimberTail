@@ -1,3 +1,5 @@
+@reference "../app.scss"
+
 body:has(.navbar.navbar--open) {
   overflow: hidden;
 }
